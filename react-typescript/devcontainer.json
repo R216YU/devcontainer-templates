@@ -1,0 +1,51 @@
+{
+  "name": "React (TypeScript)",
+
+  // Node.jsとTypeScriptがプリインストールされたMicrosoft公式イメージを使用します
+  // "20"の部分はプロジェクトで使用したいNode.jsのメジャーバージョンに合わせて変更してください (例: "18", "20-bullseye")
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+
+  "customizations": {
+    "vscode": {
+      // VS Codeの推奨設定
+      "settings": {
+        // ファイル保存時に自動でフォーマットを実行
+        "editor.formatOnSave": true,
+        // デフォルトのフォーマッターをPrettierに設定
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[javascript][javascriptreact][typescript][typescriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "editor.fontSize": 14,
+        "editor.tabSize": 2,
+        "editor.renderWhitespace": "all"
+      },
+      // Dev Container起動時に自動でインストールする拡張機能
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "xabikos.JavaScriptSnippets",
+        "formulahendry.auto-rename-tag",
+        "shardulm94.trailing-spaces",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "dsznajder.es7-react-js-snippets",
+        "GitHub.github-vscode-theme",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "PKief.material-icon-theme",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ]
+    }
+  },
+
+  // 開発サーバー用のポートをフォワードします
+  // Create React App (3000), Vite (5173) など、プロジェクトに合わせて変更・追加してください
+  "forwardPorts": [3000],
+
+  // コンテナ作成後に自動で実行するコマンド
+  // プロジェクトに合わせて "yarn install" や "pnpm install" に変更してください
+  "postCreateCommand": "",
+
+  // コンテナ内でコマンドを実行するユーザーを一般ユーザー(node)に設定します
+  "remoteUser": "node"
+}
